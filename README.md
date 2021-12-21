@@ -1,5 +1,5 @@
 # Unity Save System
-A simple unity save system to save data to a file. We can store data in key-value format, similar to PlayerPerfs but a bit more flexible system.
+A simple unity save system to save data to a file. It store data in key-value format, similar to PlayerPerfs but a bit more flexible way.
 
 ### Dependencies
 
