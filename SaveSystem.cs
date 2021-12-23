@@ -36,6 +36,7 @@ namespace BigFrogTools {
             string data;
             if (typeof(string) != typeof(T)) {
                 data = JsonConvert.SerializeObject(dataValue);
+
             }
             else {
                 data = dataValue.ToString();
@@ -50,6 +51,7 @@ namespace BigFrogTools {
         public static void GetSaveDump() {
             Data savedData = GetSavedData();
             var data = JsonConvert.SerializeObject(savedData);
+
             Debug.Log(data);
         }
 
@@ -87,7 +89,7 @@ namespace BigFrogTools {
             GetSaveDump();
         }
 
-        public static Data GetSavedData() {
+        private static Data GetSavedData() {
             if (File.Exists(Application.persistentDataPath + "/gameData.dat")) {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(Application.persistentDataPath + "/gameData.dat", FileMode.Open);
@@ -148,12 +150,12 @@ namespace BigFrogTools {
             return (T)(convertedValue);
         }
     }
-}
 
-[System.Serializable]
-public class Data {
-    public Dictionary<string, string> localData = new Dictionary<string, string>();
-    
-}
 
+    [System.Serializable]
+    public class Data {
+        public Dictionary<string, string> localData = new Dictionary<string, string>();
+
+    }
+}
 
