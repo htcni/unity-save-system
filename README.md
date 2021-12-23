@@ -76,7 +76,8 @@ Since everything is serialized as string we can store any type of data. But we h
 int[] someData = new int[5] { 15, 6, 7, 9, 2 };
 SaveSystem.SetData("someData", someData);;
 string tmpArr = SaveSystem.GetData("someData");
-int[] myArr = SaveSystem.ConvertValue(tmpArr, someData);
+int[] newArr;
+int[] myArr = SaveSystem.ConvertValue(tmpArr, newArr);
 //float[] myArr = SaveSystem.ConvertValue(tmpArr, someData);
 ```
 After it we loop through the elements.
